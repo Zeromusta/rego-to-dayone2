@@ -10,26 +10,31 @@ Not dealing with place “notes” that duplicate post “notes”. I think this
 
 
 
-# My learnings: rego.json
+# rego.json
 
 ## ROOT
->  "build": "500", 
+>  "build": "500",
+
 *Ignore*
 rego internal build number I assume.
 
 >  "collections": [
+
 *Ignore*
 Breakdown of continents, dont care, only set these up as a workaround to a rego problem when we broke the app with too many records, more than 200 or 400? don't remember. They fixed it, but it's super slow.
 
 >  "date": "2017-08-26T15:10:06Z", 
+
 *Ignore*
 Date when the rego.json was sync'd? Not sure, doesn't matter
 
 >  "device": "Hide", 
+
 *Ignore*
 iPhone name, ignore.
 
 >  "pinColors": {
+
 *CHECK*
 Categories, map to dayone tags
 
@@ -42,10 +47,12 @@ Categories, map to dayone tags
 
 
 >  "places": [
+
 *CHECK*
 The goods. See below.
 
 >  "version": "2.6"
+
 *Ignore*
 Rego app version
 
