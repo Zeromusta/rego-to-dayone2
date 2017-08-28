@@ -30,10 +30,10 @@ _**CHECK**_, Categories, map to dayone tags
 
 ```
 "Blue": "Tea", 				"pinColor": 4
-"Green": "Places to go", 			not used any more
+"Green": "Places to go", 		not used any more
 "Orange": "Drinking Establishment", 	"pinColor": 1
 "Purple": "Coffee Supplies", 		"pinColor": 3
-"Red": "Coffee", 				"pinColor": 2
+"Red": "Coffee", 			"pinColor": 2
 "Yellow": "Food House" --> 		"pinColor": 0
 ```
 
