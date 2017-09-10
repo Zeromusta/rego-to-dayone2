@@ -1,5 +1,6 @@
 import codecs
 import json
+import time
 from pprint import pprint
 from subprocess import call
 
@@ -28,6 +29,8 @@ def write_to_dayone(dayone_list):
             print("Child returned", retcode)
     except OSError as e:
         print("Execution failed:", e)
+    #print("give dayone2 a second...") # It may like a break when importing lots of photos
+    #time.sleep(1)
 #
 
 def get_tag_name(number):
@@ -104,7 +107,7 @@ def count_posts(places_list):
                     posts_date_dict[date] = posts_date_dict[date]+1
 
             if not post_date_found:
-                    posts_date_dict[post["date"]] = 1
+                posts_date_dict[post["date"]] = 1
 
         if len(posts_date_dict) > 1:
             #print("{} has {} posts.".format(place["name"],len(posts_date_dict)))
@@ -124,11 +127,12 @@ def count_posts(places_list):
 
 # IMPORTANT VARIABLES HOW DOES ONE PYTHON IDK
 # Testing stuff
-print_debug = True
-single_record = True
-record_index = 8
-photos_debug_limit_to_one = True
-dayone_write = False
+print_debug = False
+restrict_records = True
+record_min = 0
+record_max = 99
+photos_debug_limit_to_one = False
+dayone_write = True
 # Options
 photo_path = "/Users/mark/Dropbox/Apps/Rego/photos/"
 rego_path = "../../rego.json"
@@ -137,13 +141,14 @@ rego_path = "../../rego.json"
 
 # INT MAIN() LOL
 data = json.load(codecs.open(rego_path, 'r', 'utf-8-sig'))
-#if print_debug: pprint(data["places"][record_index])
 
-#For testing
-if single_record:
+#For testing or slow migrations
+if restrict_records:
     tmp = []
-    tmp.append(data["places"][record_index])
-    data["places"].clear
+    while record_min <= record_max:
+        print("This is the index we're using: {}".format(record_min))
+        tmp.append(data["places"][record_min])
+        record_min += 1
     data["places"] = tmp
 if print_debug: print("\n")
 if print_debug: pprint(data["places"])
