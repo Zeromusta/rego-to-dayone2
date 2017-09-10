@@ -9,7 +9,7 @@ Play with these options in the script before running:
 * print_debug = if true, prints lots of debug info.
 * restrict_records = if true, only runs select records, not all, for testing.
 * record_min & record_max = list indexes of records to run in. Set to 0 and 49 to run in the first 50. In my testing, dayone2 did strange things if you ran more than 100 records in at once. I opened dayone, ran in 100 records, quit dayone, rince, repeat.
-* photos_debug_limit_to_one = if true, only sends the first photo to dayone2 per post. Do this if you haven't subscribed and want to test, as dayone2 cli doesn't let you have more than 1 photo.
+* photos_debug_limit_to_one = if true, only sends the first record photo to dayone2 per post. Use this if you haven't subscribed to dayone and want to test, as dayone2 cli doesn't let you have more than 1 photo per post before subscribing.
 * dayone_write = will only send script output to dayone2 if true.
 ### Options
 * photo_path = will be appended to photo file names, full path.
